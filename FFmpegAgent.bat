@@ -4,7 +4,7 @@ cd %~dp0
 
 :LOOP
 
-set inifile=%~dp0Settings.ini
+set inifile=%~dp0Config.ini
 
 rem iniファイルを変数ファイルとして簡単に読み出し ｢;｣から始まるコメント行を除外
 for /f "tokens=1,2 delims==" %%a in ('type %inifile% ^| findstr /v "^;"') do (set "%%a=%%b")
