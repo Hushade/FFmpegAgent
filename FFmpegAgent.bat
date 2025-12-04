@@ -77,4 +77,6 @@ echo.
 rem é¿çs
 %FFMPEG_CMD%
 
+echo 
+
 endlocal
