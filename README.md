@@ -45,7 +45,6 @@ ffmpeg -ss 00:01:00 -to 00:02:00 -i "input.mp4" -c:v h264_nvenc -pix_fmt yuv420p
 - `audio_encoder` : 音声エンコーダ（例: `aac`, `libmp3lame`）。
 - `video_options` : 動画エンコーダ向けの追加オプション（例: `-cq 23 -spatial-aq 1 -multipass 1`）。
 - `audio_options` : 音声エンコーダ向けのオプション（例: `-b:a 128k -ar 48k`）。
-- `preset` : エンコーダのプリセット（必要なら利用）。
 - `framerate` : 出力フレームレート（例: `60`）。
 - `aspect` : アスペクト比（例: `16:9`）。内部では `-aspect:v` に渡されます。
 - `color_fmt` : 出力のピクセルフォーマット（例: `yuv420p`）。
