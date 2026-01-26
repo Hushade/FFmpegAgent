@@ -49,8 +49,6 @@ if not exist "%input%" (
     exit /b 1
 )
 
-rem 出力名
-set "output=%dirname%%base%-Clip%ext%"
 
 rem --- 切り取り時間の入力 ---
 set /p "start=動画の切り取りの開始時間(MM:SS)> "
@@ -67,6 +65,11 @@ if "%end%"=="" (
     pause
     exit /b 1
 )
+
+rem 出力名
+set "start_clean=%start::=-%"
+set "end_clean=%end::=-%"
+set "output=%dirname%%base%-%start_clean%-%end_clean%%ext%"
 
 rem --- 実行前にコマンドを構築して表示（デバッグ用） ---
 set "FFMPEG_CMD=ffmpeg -ss !start! -to !end! -i "!input!" -c:v !video_encoder! -pix_fmt !color_fmt! -color_range !color_range! -aspect:v !aspect! -r:v !framerate! !video_options! -c:a !audio_encoder! !audio_options! !option! "!output!""
